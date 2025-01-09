@@ -13,7 +13,7 @@ spec:
   project: platform
   source:
     path: platform/cloudflared
-    repoURL: https://github.com/<your-github-user>/<your-repo-name>.git
+    repoURL: https://github.com/4Mago/get-started.git
   syncPolicy:
     automated:
       allowEmpty: true
