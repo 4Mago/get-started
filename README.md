@@ -84,8 +84,7 @@ Give it a few seconds to resolve and now you should be able to log in to the Arg
 
 ```
 # Copy the admin password
-kubectl -n argocd get secret argocd-initial-admin-secret -o yaml | yq '.data.password | @base64d'
-
+kubectl -n argocd get secret argocd-initial-admin-secret -o yaml | yq e '.data.password' - | base64 -d
 # Port forward the argocd web server
 kubectl port-forward services/argocd-server -n argocd 8080:443
 ```
