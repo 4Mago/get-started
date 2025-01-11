@@ -47,7 +47,7 @@ When your cluster is up and running you can configure `kubectl` and `talosctl` t
 ```
 kubectl config use-context admin@reclaim-the-stack
 talosctl config context reclaim-the-stack
-talosctl config node $(kubectl get node reclaim-the-stack-controlplane-1 -o yaml | yq .status.addresses.0.address)
+talosctl config node $(kubectl get node reclaim-the-stack-controlplane-1 -o yaml | yq e '.status.addresses[0].address' -)
 ```
 
 You should now be able to list the nodes of your cluster via:
